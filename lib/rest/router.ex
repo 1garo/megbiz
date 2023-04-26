@@ -17,6 +17,13 @@ defmodule Rest.Router do
     send_resp(conn, 200, "OK")
   end
 
+  get "/hello" do
+    conn
+      |> put_resp_content_type("application/json")
+      |> send_resp(201, Jason.encode!(%{:hello => "world"}))
+
+  end
+
   match _ do
     send_resp(conn, 404, "Not found")
   end
