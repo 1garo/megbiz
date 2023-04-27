@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: megbiz_db
+    restart: always
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: "megbizpw"
+      POSTGRES_USER: "megbiz"
+      POSTGRES_DB: "megbiz_db"
+    ports:
+      - "15432:5432"
+
+  adminer_container:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+    ports:
+      - 8089:8080
+
+volumes:
+  pg-data:
