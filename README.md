@@ -1,21 +1,9 @@
-# Rest
-
-**TODO: Add description**
+# Megbiz
 
 ## Installation
+You'll need to install [docker compose](https://github.com/docker/compose#where-to-get-docker-compose) and [elixir](https://elixir-lang.org/install.html), after that just run the follolwing commands:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `rest` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:rest, "~> 0.1.0"}
-  ]
-end
+```bash
+$ docker compose up -d
+$ mix ecto.migrate
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/rest>.
-
