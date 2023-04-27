@@ -1,13 +1,13 @@
-defmodule RestTest do
+defmodule MegbizTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
-  @opts Rest.Router.init([])
+  @opts Megbiz.Router.init([])
 
   test "return ok" do
     conn = conn(:get, "/")
 
-    conn = Rest.Router.call(conn, @opts)
+    conn = Megbiz.Router.call(conn, @opts)
 
     assert conn.state == :sent
     assert conn.status == 200
